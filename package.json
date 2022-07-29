@@ -10,9 +10,12 @@
     "path": "^0.12.7"
   },
   "scripts": {
-    "start": "node server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently \"npm start \" \"npm run client"
+    "build": "cd client && npm run build --legacy-peer-deps",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client --legacy-peer-deps && npm run build --legacy-peer-deps",
+    "server": "nodemon server.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
     },
   "name": "server",
   "version": "1.0.0",
