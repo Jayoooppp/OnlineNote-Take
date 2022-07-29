@@ -6,13 +6,14 @@ import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 
+
 function App() {
 	
-	
+	const link = "https://onlinenote-taker.herokuapp.com"
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/note")
+    axios.get(link +"/note")
     .then(response => {
       console.log(response.data)
       setNotes(response.data);
@@ -22,7 +23,7 @@ function App() {
 
   function addNote(newNote) {
     axios.post(
-      "http://localhost:8080/note", { newNote }) 
+      link +"/note", { newNote }) 
              .then(res => {
                console.log(res);
                console.log(res.data);
@@ -31,7 +32,7 @@ function App() {
 
   function deleteNote(id) {
     axios.delete(
-      "http://localhost:8080/note/" +id +"")
+      link +"/note/" +id +"")
       .then(res => {
         console.log(res);
         console.log(res.data);
