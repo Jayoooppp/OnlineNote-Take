@@ -12,9 +12,8 @@
   "scripts": {
     "start": "node server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm start \" \"npm run client",
-    "heroku-postbuild": "npm install --legacy-peer-deps client && npm run build --legacy-peer-deps client npm audit fix"
-  },
+    "dev": "concurrently \"npm start \" \"npm run client"
+    },
   "name": "server",
   "version": "1.0.0",
   "main": "server.js",
