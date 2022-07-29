@@ -13,7 +13,7 @@
     "start": "node server.js",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm start \" \"npm run client",
-    "heroku-postbuild": "npm install --legacy-peer-deps client && npm run build --legacy-peer-deps client"
+    "heroku-postbuild": "npm install --legacy-peer-deps client && npm run build --legacy-peer-deps client npm audit fix"
   },
   "name": "server",
   "version": "1.0.0",
