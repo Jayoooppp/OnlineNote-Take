@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
 import Header from '../Header';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -110,9 +111,7 @@ const Home = () => {
                                     Don’t have an account?
                                 </span>
                                 &nbsp;&nbsp;
-                                <a class="txt2" href="/signup">
-                                    Sign Up
-                                </a>
+                                <Link to="/Signup">SignUp</Link>
                             </div>
                         </form>
                     </div>

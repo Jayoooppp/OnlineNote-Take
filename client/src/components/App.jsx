@@ -15,35 +15,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 function App() {
 
-  const link = "https://onlinenote-taker.herokuapp.com"
-  // const [notes, setNotes] = useState([]);
-
-  // useEffect(() => {  
-  //   axios.get(link + "/note")
-  //     .then(response => {
-  //       console.log(response.data)
-  //       setNotes(response.data);
-
-  //     })
-  // })
-
-  function addNote(newNote) {
-    axios.post(
-      link + "/note", { newNote })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      });
-  }
-
-  function deleteNote(id) {
-    axios.delete(
-      link + "/note/" + id + "")
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      });
-  }
 
   return (
     <BrowserRouter>
