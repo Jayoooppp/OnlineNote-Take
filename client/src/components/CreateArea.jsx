@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "./Header";
+
 
 
 function CreateArea(props) {
@@ -26,8 +29,6 @@ function CreateArea(props) {
 
   function submitNote(event) {
     event.preventDefault();
-    
-    
     props.onAdd(note);
     setNote({
       title: "",
@@ -39,8 +40,12 @@ function CreateArea(props) {
     setExpanded(true);
   }
 
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const name = userInfo.fname + " " + userInfo.lname;
   return (
-    <div>
+    <>
+      <Header name={name} logout={true} />
+
       <form className="create-note">
         {isExpanded && (
           <input
@@ -66,7 +71,8 @@ function CreateArea(props) {
           </Fab>
         </Zoom>
       </form>
-    </div>
+
+    </>
   );
 }
 

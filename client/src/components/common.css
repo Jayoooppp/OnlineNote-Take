@@ -1,0 +1,24 @@
+ #footer {
+
+
+     height: 32px;
+     /* height + top/bottom paddding + top/bottom border must add up to footer height */
+     padding: 8px;
+     text-align: center;
+
+ }
+
+ #container {
+
+     position: absolute;
+     top: 270px;
+     left: 490px;
+     width: 27.5%;
+     text-align: center;
+ }
+
+
+ .header {
+     display: flex;
+     justify-content: space-between;
+ }
