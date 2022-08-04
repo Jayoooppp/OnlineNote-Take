@@ -40,12 +40,12 @@ let newsession;
 
 
 
-// //Requests targetting all the notes
-// app.use(express.static(path.resolve(__dirname, "./client/build")));
-// // Step 2:
-// app.get("/", function (request, response) {
-//   response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-// });
+//Requests targetting all the notes
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+// Step 2:
+app.get("/", function (request, response) {
+    response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 
 // login Route
 app.post("/login", function (req, res) {
@@ -241,6 +241,6 @@ app.route("/note/:id")
 
 const host = '0.0.0.0';
 const port = process.env.PORT || 8080;
-app.listen(8080, function () {
+app.listen(port, host, function () {
     console.log("Server started.......", port);
 });
