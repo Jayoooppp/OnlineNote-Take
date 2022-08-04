@@ -80,7 +80,7 @@ app.post("/login", function (req, res) {
 
 
 // Signup Route
-app.post("/signup", function (req, res) {
+app.get("/signup", function (req, res) {
     let fname = req.body.fname;
     let lname = req.body.lname;
     let new_email = req.body.email;
