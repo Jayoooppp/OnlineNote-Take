@@ -5,3 +5,4 @@ Technology Stack:
 Front End : React
 Back End : Node
 Database : MongoDB
+## Login and Signup features are added
